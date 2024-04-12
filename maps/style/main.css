@@ -1,0 +1,287 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: 0.2s linear;
+    outline: none;
+    border: none;
+    scroll-behavior: smooth;
+}
+/* adding a variable */
+:root {
+    --pink: #e84393;
+}
+
+p {
+    text-align: justify;
+}
+
+section {
+    min-height: auto;
+}
+
+/* nav */
+.nav-item.active {
+    background-color: var(--pink);
+    border-radius: 12px;
+    padding: 0 12px;
+}
+
+/* Section-Home */
+.home {
+    background: url("https://dk4fkkwa4o9l0.cloudfront.net/production/uploads/announcement/image/2033/03_Leflet_Diare_Belakang_web.jpg")
+        no-repeat;
+    background-size: 850px;
+    background-position: right;
+    background-color: #fadeec;
+    height: 100vh;
+    margin-top: 48px;
+}
+
+.btn {
+    padding: 10px 25px;
+    border-radius: 20px;
+}
+
+@media (max-width: 700px) {
+    .home {
+        background-size: 7000px;
+        background-image: none;
+    }
+}
+@media (max-width: 1000px) {
+    .home {
+        background-image: none;
+    }
+}
+
+.heading {
+    color: #333;
+    background: rgba(255, 51, 153, 0.05);
+}
+.heading span {
+    color: var(--pink);
+    padding-right: 0.5em;
+}
+
+/* Section-About */
+.image-container {
+    flex: 1 1 40em;
+    position: relative;
+}
+.image-container img {
+    width: 100%;
+    border: 1.5em solid white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+.image-container h1 {
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    font-size: 3em;
+    color: #333;
+    background: #fff;
+    padding: 0.4em 0.8em;
+    text-align: center;
+    width: 100%;
+    mix-blend-mode: screen;
+}
+
+@media (max-width: 700px) {
+    .image-container h1 {
+        font-size: 1.8em;
+    }
+    @media (max-width: 300px) {
+        .image-container h1 {
+            font-size: 1.5em;
+        }
+    }
+}
+/* Icons section */
+.icons-container {
+    background: #f0f0f0;
+    min-height: fit-content;
+}
+.icons-container .icon {
+    background: white;
+    gap: 1.5rem;
+    padding: 15px 20px;
+    width: 350px;
+}
+.icon .info p {
+    font-weight: bold;
+    font-align: left;
+    color: #333;
+}
+.icon .info small {
+    color: var(--pink);
+}
+
+@media (max-width: 900px) {
+    .icons-container .icon {
+        width: 35vw;
+    }
+}
+@media (max-width: 500px) {
+    .icons-container .icon {
+        width: 90vw;
+    }
+}
+
+/* Start product section */
+.products-container {
+    gap: 2.5rem;
+}
+.product {
+    width: 350px;
+}
+.product span {
+    padding: 5px;
+    color: var(--pink);
+    background: #ffeaf4;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.product:hover {
+    transform: scale(1.1);
+}
+
+.product:hover img {
+    transform: scale(1);
+}
+
+.product .bar {
+    position: relative;
+    background-color: palevioletred;
+    transform: scaley(0);
+}
+
+.product:hover .bar {
+    transform: scaley(1);
+}
+
+.price {
+    color: var(--pink);
+}
+
+.price2 {
+    color: #999;
+}
+
+@media (max-width: 900px) {
+    .product {
+        width: 35vw;
+    }
+}
+@media (max-width: 500px) {
+    .product {
+        width: 90vw;
+    }
+}
+
+/* start Review */
+.review-content {
+    gap: 2.5rem;
+}
+.review-content .review-card {
+    width: 350px;
+    row-gap: 1rem;
+}
+.stars {
+    color: var(--pink);
+}
+
+.user img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.user-info h1 {
+    color: #333;
+}
+.user-info span {
+    color: #999;
+}
+
+@media (max-width: 900px) {
+    .review-content .review-card {
+        width: 35vw;
+    }
+}
+@media (max-width: 500px) {
+    .review-content .review-card {
+        width: 90vw;
+    }
+}
+/* contact section */
+.contact-content {
+    gap: 4rem;
+}
+.contact-content form {
+    width: 800px;
+    gap: 2rem;
+    flex-wrap: wrap;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem 2.5rem;
+}
+
+.contact-content img {
+    min-width: 200px;
+}
+textarea {
+    resize: none;
+}
+
+button:hover {
+    background: palevioletred;
+}
+
+@media (max-width: 900px) {
+    .contact-content form {
+        width: 90vw;
+    }
+}
+
+/* Start footer  */
+footer {
+    background: #f46bad1f;
+    padding: 2px 0px;
+}
+.footer-content {
+    gap: 2rem;
+}
+
+.box h1 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+}
+
+.box img {
+    margin-top: 1rem;
+    height: 48px;
+}
+.box a:hover {
+    color: #e84393;
+}
+footer .copyright {
+    margin-top: 2rem;
+    font-size: 1.3em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3em;
+}
+footer .copyright span {
+    color: var(--pink);
+}
+#map {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: auto;
+}

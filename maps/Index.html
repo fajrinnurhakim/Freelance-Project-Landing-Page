@@ -1,0 +1,1389 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="https://i.ibb.co/XZkWFB7/icons8-orchid-96.png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style/main.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <link rel="stylesheet" href="style/leaflet.css">
+  <link rel="stylesheet" href="style/qgis2web.css">
+  <link rel="stylesheet" href="style/fontawesome-all.min.css">
+  <title>Tugas WebMap Leaflet</title>
+</head>
+
+<body>
+  <!-- Start Header -->
+  <header class="bg-white shadow fixed-top">
+    <nav class="container navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand fs-6" href="https://yankes.kemkes.go.id/">KEMENTRIAN KESEHATAN KOTA YOGYAKARTA
+        <span>&#8226;</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="container-fluid"></div>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#products">Prevent</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#review">Review </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#maps">Maps</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- start home section -->
+  <section class="home container-fluid d-flex align-items-center pt-5 pb-5" id="home">
+    <div class="container ">
+      <div class="row">
+        <div class="col text-center text-md-start">
+          <h1 class="fs-2">Kota Yogyakarta</h1>
+          <h1 class="fs-3">Istimewa</h1>
+          <p class="text-center text-md-start">
+            Kementrian Kesehatan Kota Yogyakarta
+          </p>
+          <a href=" #products" class="btn btn-dark">Learn More</a>
+        </div>
+        <div class="col d-none d-md-block"></div>
+      </div>
+    </div>
+  </section>
+  <!-- end home section -->
+  <!--  Start About Section -->
+  <section class="about pt-3 pb-5" id="about">
+    <p class="heading text-center fs-1 fw-bold p-2 my-5">About<span> Us</span></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="image-container rounded-3">
+            <img src="https://pbs.twimg.com/media/ENub1o2VUAAlpa8.jpg" autoplay loop muted class="w-100 rounded-3"
+              alt="image-about"></img>
+            <h1 class="fs-3 position-absolute top-50 start-50 translate-middle bg-white rounded-3 p-3 fs-3">Diarrhea
+              alert
+            </h1>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="my-3">
+            <h1 class="text-center text-lg-start">About Diarrhea</h1>
+            Kota Yogyakarta, sebagai pusat budaya dan pendidikan di Indonesia menghadapi tantangan kompleks terkait
+            dengan kesehatan masyarakat, termasuk masalah diare yang memerlukan tindakan mitigasi dan pengelolaan yang
+            efektif.
+            </p>
+            <p>
+              Dalam konteksi ini pemerintah setempat melalui Dinas Kesehatan Kota Yogyakarta telah mengadopsi pendekatan
+              inovatif menggunakan konsep geoportal sebagagi alat utama untuk mengintegrasikan data spasial dan
+              informasi terkait dalam pemgambilan keputusan yang berkelanjutan dalam bidang kesehatan.
+            </p>
+            </p>
+            <a href="https://ayosehat.kemkes.go.id/penyakit/diare" class="btn btn-dark">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--  end About Section -->
+
+  <!-- icons section starts -->
+  <section class="icons-container bg-light py-3">
+    <div class="container">
+      <div class="row row justify-content-center justify-content-lg-between">
+        <!-- icon 1 -->
+        <div class="col-12 col-md-auto d-flex align-items-center icon m-2 rounded-3">
+          <img src="https://i.ibb.co/C88nHRz/icon-1.png" alt="image-icon">
+          <div class="info">
+            <p>Detrimental to country</p>
+            <small>It is detrimental to the nation's children as the nation's successors</small>
+          </div>
+        </div>
+        <!-- icon 2 -->
+        <div class="col-12 col-md-auto d-flex align-items-center icon m-2 rounded-3">
+          <img src="https://i.ibb.co/3msLxZr/icon-2.png" alt="image-icon">
+          <div class="info">
+            <p>Spend a lot of money</p>
+            <small>Spending state money to finance health insurance</small>
+          </div>
+        </div>
+        <!-- icon 3 -->
+        <div class="col-12 col-md-auto d-flex align-items-center icon m-2 rounded-3">
+          <img src="https://i.ibb.co/cyk4sJq/icon-3.png" alt="image-icon">
+          <div class="info">
+            <p>Decreased quality of life</p>
+            <small>Quality of life decreases due to diarrhea</small>
+          </div>
+        </div>
+        <!-- icon 4 -->
+        <div class="col-12 col-md-auto d-flex align-items-center icon m-2 rounded-3">
+          <img src="https://i.ibb.co/PFvYSrW/icon-4.png" alt="image-icon">
+          <div class="info">
+            <p>Inhibits the country's development</p>
+            <small>The country's development is hampered because of diarrhea</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- icons section ends -->
+  <!-- Product secton starts -->
+  <section class="products pt-3 pb-5" id="products">
+    <p class="heading text-center fs-1 fw-bold p-2 my-5">Tips to prevent <span>Diarrhea</span></p>
+    <div class="container">
+      <div class="products-container row justify-content-center justify-content-lg-between">
+        <!-- product 1 -->
+        <div class="product col-md-auto d-flex flex-column align-items-center p-2 shadow rounded-3">
+          <span class="p-2 ">100%</span>
+          <div class="img d-flex justify-content-center flex-column w-100">
+            <img class="mx-auto w-50"
+              src="https://gudviral.com/wp-content/uploads/2020/08/poster-cuci-tangan-dengan-sabun-10.jpg"
+              alt="image-product" />
+            <div class="bar text-white d-flex justify-content-between align-items-center px-5">
+              <a href="#products"><i class="fa-solid fa-heart text-white"></i></a>
+              <a href="#products" class="text-decoration-none border-start border-end p-1 text-white">
+                Mencuci Tangan</a>
+              <a href="#products"><i class="fa-solid fa-share text-white"></i></a>
+            </div>
+          </div>
+          <div class="p-2 d-flex flex-column align-items-center">
+            <h1 class="fs-3">Wash your Hands</h1>
+            <p class="price fs-4">6 second <del class="price2 text-decoration-line-through fs-6">
+                6 minutes</del></p>
+          </div>
+        </div>
+        <!-- product 2 -->
+        <div class="product col-md-auto d-flex flex-column align-items-center p-2 shadow rounded-3">
+          <span class="p-2 ">100%</span>
+          <div class="img d-flex justify-content-center flex-column w-100">
+            <img class="mx-auto w-50"
+              src="https://4.bp.blogspot.com/-L2G-bc6oag4/VYlmcEoi5hI/AAAAAAAAAC8/ioQVUHmnPuo/s1600/FOTO-MAKANAN-EMPAT-SEHAT-LIMA-SEMPURA-3.jpg"
+              alt="image-product" />
+            <div class="bar text-white d-flex justify-content-between align-items-center px-5">
+              <a href="#products"><i class="fa-solid fa-heart text-white"></i></a>
+              <a href="#products" class="text-decoration-none border-start border-end p-1 text-white">Makan Bergizi</a>
+              <a href="#products"><i class="fa-solid fa-share text-white"></i></a>
+            </div>
+          </div>
+          <div class="p-2 d-flex flex-column align-items-center">
+            <h1 class="fs-3">Eat nutritious</h1>
+            <p class="price fs-4">every time <del class="price2 text-decoration-line-through fs-6">
+                every year</del></p>
+          </div>
+        </div>
+        <!-- product 3 -->
+        <div class="product col-md-auto d-flex flex-column align-items-center p-2 shadow rounded-3">
+          <span class="p-2 ">100%</span>
+          <div class="img d-flex justify-content-center flex-column w-100">
+            <img class="mx-auto w-50"
+              src="https://s3-ap-southeast-2.amazonaws.com/2ser-wordpress/wp-content/aws/uploads/2017/08/31041553/sport-image.jpg"
+              alt="image-product" />
+            <div class="bar text-white d-flex justify-content-between align-items-center px-5">
+              <a href="#products"><i class="fa-solid fa-heart text-white"></i></a>
+              <a href="#products" class="text-decoration-none border-start border-end p-1 text-white">Berolahraga</a>
+              <a href="#products"><i class="fa-solid fa-share text-white"></i></a>
+            </div>
+          </div>
+          <div class="p-2 d-flex flex-column align-items-center">
+            <h1 class="fs-3">Exercising</h1>
+            <p class="price fs-4">once a week <del class="price2 text-decoration-line-through fs-6">
+                once a year</del></p>
+          </div>
+        </div>
+        <!-- product 4 -->
+        <div class="product col-md-auto d-flex flex-column align-items-center p-2 shadow rounded-3">
+          <span class="p-2 ">100%</span>
+          <div class="img d-flex justify-content-center flex-column w-100">
+            <img class="mx-auto w-50" src="http://asset-a.grid.id/crop/0x0:0x0/x/photo/2019/04/12/2975484616.jpg"
+              alt="image-product" />
+            <div class="bar text-white d-flex justify-content-between align-items-center px-5">
+              <a href="#products"><i class="fa-solid fa-heart text-white"></i></a>
+              <a href="#products" class="text-decoration-none border-start border-end p-1 text-white">Tidur yang
+                cukup</a>
+              <a href="#products"><i class="fa-solid fa-share text-white"></i></a>
+            </div>
+          </div>
+          <div class="p-2 d-flex flex-column align-items-center">
+            <h1 class="fs-3">Sleep Well</h1>
+            <p class="price fs-4">8 hours a day<del class="price2 text-decoration-line-through fs-6">
+                3 hours a day</del></p>
+          </div>
+        </div>
+        <!-- product 5 -->
+        <div class="product col-md-auto d-flex flex-column align-items-center p-2 shadow rounded-3">
+          <span class="p-2 ">100%</span>
+          <div class="img d-flex justify-content-center flex-column w-100">
+            <img class="mx-auto w-50" src="https://cdn.kibrispdr.org/data/258/gambar-anak-sekolah-menyapu-lantai-40.jpg"
+              alt="image-product" />
+            <div class="bar text-white d-flex justify-content-between align-items-center px-5">
+              <a href="#products"><i class="fa-solid fa-heart text-white"></i></a>
+              <a href="#products" class="text-decoration-none border-start border-end p-1 text-white">Menjaga
+                Kebersihan</a>
+              <a href="#products"><i class="fa-solid fa-share text-white"></i></a>
+            </div>
+          </div>
+          <div class="p-2 d-flex flex-column align-items-center">
+            <h1 class="fs-3">Cleaning the house</h1>
+            <p class="price fs-4">every day<del class="price2 text-decoration-line-through fs-6">
+                every year</del></p>
+          </div>
+        </div>
+        <!-- product 6 -->
+        <div class="product col-md-auto d-flex flex-column align-items-center p-2 shadow rounded-3">
+          <span class="p-2 ">100%</span>
+          <div class="img d-flex justify-content-center flex-column w-100">
+            <img class="mx-auto w-50"
+              src="https://cdn-2.tstatic.net/tribunnews/foto/bank/images/ilustrasi-minum-air-putih-setelah-olahraga.jpg"
+              alt="image-product" />
+            <div class="bar text-white d-flex justify-content-between align-items-center px-5">
+              <a href="#products"><i class="fa-solid fa-heart text-white"></i></a>
+              <a href="#products" class="text-decoration-none border-start border-end p-1 text-white">Minum air
+                putih</a>
+              <a href="#products"><i class="fa-solid fa-share text-white"></i></a>
+            </div>
+          </div>
+          <div class="p-2 d-flex flex-column align-items-center">
+            <h1 class="fs-3">Drink enough water</h1>
+            <p class="price fs-4">2 liter a day<del class="price2 text-decoration-line-through fs-6">
+                no dirnk water</del></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Product secton End -->
+  <!-- Review secton starts -->
+  <section class="review pt-3 pb-5" id="review">
+    <p class="heading text-center fs-1 fw-bold p-2 my-5">Menteri Kesehatan Indonesia <span>Massage</span></p>
+    <div class="container">
+      <div class="review-content row justify-content-center justify-content-lg-between">
+        <!-- Review 1  -->
+        <div class="review-card col-md-auto d-flex flex-column shadow p-3 rounded-3">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p>
+            Kalau anak-anak kita tidak sehat dan tidak pintar tidak mungkin negara Indonesia bisa jadi negara maju. Pak
+            Presiden ingin kita menjadi Indonesia emas. Kalau ingin sehat dan pintar, anak-anaknya (anak Indonesia)
+            tidak boleh kekurangan gizi. Karena kalau kekurangan gizi pasti tidak bisa pintar ketika besarnya.
+          </p>
+          <div class="user d-flex align-items-center my-1 position-relative">
+            <img
+              src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgNoVmHbNmlaNtskBg5NY9H_ZE6W8aKgFY-JRW1neYfxP62IC6B_69JZA6V_nND6Que5vYDRPBlXgPbrO3-SPMgUoMBLgs-DUrXklMIWrRYM7EOItebzzIffhEcS5OLdpdNFkko3sDLChJsP_ZqnjdiHTnhRdAYqCdHG9JQ9IZTIpDlQxcmXz-suRQx/s1200/gunadi%20sadikin.jpg"
+              alt="image-user" />
+            <div class="user-info d-flex flex-column ps-3">
+              <h1 class="fs-5">Budi Gunadi </h1>
+              <span>Menteri Kesehatan</span>
+            </div>
+            <i class="fas fa-quote-right text-light position-absolute top-50 end-0 translate-middle-y"
+              style="font-size: 5em;"></i>
+
+          </div>
+        </div>
+        <!-- Review 2  -->
+        <div class="review-card col-md-auto d-flex flex-column shadow p-3 rounded-3">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p>
+            Biasakan mencuci tangan pakai sabun pada 5 waktu kritis. Membiasakan diri untuk mencuci tangan pakai sabun
+            berarti mengajarkan anak-anak dan seluruh keluarga hidup sehat sejak dini. Cuci tangan pakai sabun dapat
+            dengan mudah dilakukan dan tidak perlu mengeluarkan biaya yang banyak.
+          </p>
+          <div class="user d-flex align-items-center my-1 position-relative ">
+            <img
+              src="https://1.bp.blogspot.com/-8Hfg3KINWOY/T6DeHFdPUmI/AAAAAAAACOw/0cLUb1tKeW0/s320/Endang+Rahayu+Sedyaningsih.jpg"
+              alt="image-user" />
+            <div class="user-info d-flex flex-column ps-3">
+              <h1 class="fs-5">Endang Rahayu</h1>
+              <span>Menteri Kesehatan</span>
+            </div>
+            <i class="fas fa-quote-right text-light position-absolute top-50 end-0 translate-middle-y"
+              style="font-size: 5em;"></i>
+
+          </div>
+        </div>
+        <!-- Review 3  -->
+        <div class="review-card col-md-auto d-flex flex-column shadow p-3 rounded-3">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+
+          </div>
+          <p>
+            Membiasakan diri untuk mencuci tangan pakai sabun berarti mengajarkan anak-anak dan seluruh keluarga hidup
+            sehat sejak dini.Walaupun sudah menunjukan peningkatan, namun kebiasaan Cuci Tangan Pakai Sabun (CTPS)
+            masyarakat Indonesia perlu ditingkatkan lagi.
+          </p>
+          <div class="user d-flex align-items-center my-1 position-relative">
+            <img
+              src="https://web.archive.org/web/20210129230204im_/https://www.kemenkeu.go.id/media/17115/sri-mulyani.jpg"
+              alt="image-user" />
+            <div class="user-info d-flex flex-column ps-3">
+              <h1 class="fs-5">Sri Mulyani</h1>
+              <span>Menteri Kesehatan</span>
+            </div>
+            <i class="fas fa-quote-right text-light position-absolute top-50 end-0 translate-middle-y"
+              style="font-size: 5em;"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Review secton starts -->
+  <!-- Start Contact Section -->
+  <section class="contact pt-3 pb-5" id="contact">
+    <p class="heading text-center fs-1 fw-bold p-2 mt-5">Contact <span>Kementrian Kesehatan Indonesia</span></p>
+    <div class="container">
+      <div class="contact-content d-flex justify-content-center justify-content-lg-between align-items-center">
+        <form class="d-flex flex-column justify-items-center rounded-3">
+          <input type="text" class="form-control" id="name" placeholder="name">
+          <input type="text" class="form-control" id="email" placeholder="hanantarinisanastri@gmail.com">
+          <input type="text" class="form-control" id="number" placeholder="number">
+          <textarea class="form-control" id="message" rows="3" placeholder="message..."></textarea>
+          <button type="submit" class="btn btn-dark">Send Message</button>
+        </form>
+        <img class="d-none d-md-inline" src="https://www.beangasm.id/assets/frontend/img/mail-illustrator.png"
+          alt="image-contact" />
+      </div>
+    </div>
+  </section>
+  <!-- Start Map -->
+  <section class="pt-3 pb-5" id="maps">
+    <p class="heading text-center fs-1 fw-bold p-2 my-5">Peta<span> Persebaran</span></p>
+    <div class="container">
+      <div id="map">
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/ADMINISTRASIDESA_1.js"></script>
+        <script src="data/JUMLAHKASUSDIARE_2.js"></script>
+        <script src="data/SUNGAI_3.js"></script>
+        <script src="data/JALAN_4.js"></script>
+        <script src="data/PERSAWAHAN_5.js"></script>
+        <script src="data/PEMERINTAHAN_6.js"></script>
+        <script>
+          var map = L.map('map', {
+            zoomControl: true, maxZoom: 28, minZoom: 1
+          }).fitBounds([[-7.864399162788509, 110.2749966460381], [-7.749058796337014, 110.44711538875801]]);
+          var hash = new L.Hash(map);
+          map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+          var autolinker = new Autolinker({ truncate: { length: 30, location: 'smart' } });
+          function removeEmptyRowsFromPopupContent(content, feature) {
+            var tempDiv = document.createElement('div');
+            tempDiv.innerHTML = content;
+            var rows = tempDiv.querySelectorAll('tr');
+            for (var i = 0; i < rows.length; i++) {
+              var td = rows[i].querySelector('td.visible-with-data');
+              var key = td ? td.id : '';
+              if (td && td.classList.contains('visible-with-data') && feature.properties[key] == null) {
+                rows[i].parentNode.removeChild(rows[i]);
+              }
+            }
+            return tempDiv.innerHTML;
+          }
+          document.querySelector(".leaflet-popup-pane").addEventListener("load", function (event) {
+            var tagName = event.target.tagName,
+              popup = map._popup;
+            // Also check if flag is already set.
+            if (tagName === "IMG" && popup && !popup._updated) {
+              popup._updated = true; // Set flag to prevent looping.
+              popup.update();
+            }
+          }, true);
+          var bounds_group = new L.featureGroup([]);
+          function setBounds() {
+          }
+          map.createPane('pane_OSMStandard_0');
+          map.getPane('pane_OSMStandard_0').style.zIndex = 400;
+          var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_OSMStandard_0',
+            opacity: 1.0,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+          });
+          layer_OSMStandard_0;
+          map.addLayer(layer_OSMStandard_0);
+          function pop_ADMINISTRASIDESA_1(feature, layer) {
+            var popupContent = '<table>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['KDPPUM'] !== null ? autolinker.link(feature.properties['KDPPUM'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['NAMOBJ'] !== null ? autolinker.link(feature.properties['NAMOBJ'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['REMARK'] !== null ? autolinker.link(feature.properties['REMARK'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['KDPBPS'] !== null ? autolinker.link(feature.properties['KDPBPS'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['FCODE'] !== null ? autolinker.link(feature.properties['FCODE'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['LUASWH'] !== null ? autolinker.link(feature.properties['LUASWH'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['UUPP'] !== null ? autolinker.link(feature.properties['UUPP'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['SRS_ID'] !== null ? autolinker.link(feature.properties['SRS_ID'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['LCODE'] !== null ? autolinker.link(feature.properties['LCODE'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['METADATA'] !== null ? autolinker.link(feature.properties['METADATA'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['KDEBPS'] !== null ? autolinker.link(feature.properties['KDEBPS'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['KDEPUM'] !== null ? autolinker.link(feature.properties['KDEPUM'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['KDCBPS'] !== null ? autolinker.link(feature.properties['KDCBPS'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['KDCPUM'] !== null ? autolinker.link(feature.properties['KDCPUM'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['KDBBPS'] !== null ? autolinker.link(feature.properties['KDBBPS'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['KDBPUM'] !== null ? autolinker.link(feature.properties['KDBPUM'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['WADMKD'] !== null ? autolinker.link(feature.properties['WADMKD'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['WIADKD'] !== null ? autolinker.link(feature.properties['WIADKD'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['WADMKC'] !== null ? autolinker.link(feature.properties['WADMKC'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['WIADKC'] !== null ? autolinker.link(feature.properties['WIADKC'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['WADMKK'] !== null ? autolinker.link(feature.properties['WADMKK'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['WIADKK'] !== null ? autolinker.link(feature.properties['WIADKK'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['WADMPR'] !== null ? autolinker.link(feature.properties['WADMPR'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['WIADPR'] !== null ? autolinker.link(feature.properties['WIADPR'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['TIPADM'] !== null ? autolinker.link(feature.properties['TIPADM'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['SHAPE_Leng'] !== null ? autolinker.link(feature.properties['SHAPE_Leng'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['SHAPE_Area'] !== null ? autolinker.link(feature.properties['SHAPE_Area'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+              </table>';
+            layer.bindPopup(popupContent, { maxHeight: 400 });
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+          }
+
+          function style_ADMINISTRASIDESA_1_0() {
+            return {
+              pane: 'pane_ADMINISTRASIDESA_1',
+              opacity: 1,
+              color: 'rgba(35,35,35,1.0)',
+              dashArray: '',
+              lineCap: 'butt',
+              lineJoin: 'miter',
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: 'rgba(154,241,247,1.0)',
+              interactive: true,
+            }
+          }
+          map.createPane('pane_ADMINISTRASIDESA_1');
+          map.getPane('pane_ADMINISTRASIDESA_1').style.zIndex = 401;
+          map.getPane('pane_ADMINISTRASIDESA_1').style['mix-blend-mode'] = 'normal';
+          var layer_ADMINISTRASIDESA_1 = new L.geoJson(json_ADMINISTRASIDESA_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ADMINISTRASIDESA_1',
+            layerName: 'layer_ADMINISTRASIDESA_1',
+            pane: 'pane_ADMINISTRASIDESA_1',
+            onEachFeature: pop_ADMINISTRASIDESA_1,
+            style: style_ADMINISTRASIDESA_1_0,
+          });
+          bounds_group.addLayer(layer_ADMINISTRASIDESA_1);
+          map.addLayer(layer_ADMINISTRASIDESA_1);
+          function pop_JUMLAHKASUSDIARE_2(feature, layer) {
+            var popupContent = '<table>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['kdppum'] !== null ? autolinker.link(feature.properties['kdppum'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['kdpbps'] !== null ? autolinker.link(feature.properties['kdpbps'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['uupp'] !== null ? autolinker.link(feature.properties['uupp'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['srs_id'] !== null ? autolinker.link(feature.properties['srs_id'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['metadata'] !== null ? autolinker.link(feature.properties['metadata'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['kdcbps'] !== null ? autolinker.link(feature.properties['kdcbps'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['kdcpum'] !== null ? autolinker.link(feature.properties['kdcpum'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['kdbbps'] !== null ? autolinker.link(feature.properties['kdbbps'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['wiadkd'] !== null ? autolinker.link(feature.properties['wiadkd'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['wadmkc'] !== null ? autolinker.link(feature.properties['wadmkc'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['wiadkc'] !== null ? autolinker.link(feature.properties['wiadkc'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['wadmkk'] !== null ? autolinker.link(feature.properties['wadmkk'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['wiadkk'] !== null ? autolinker.link(feature.properties['wiadkk'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['wadmpr'] !== null ? autolinker.link(feature.properties['wadmpr'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['wiadpr'] !== null ? autolinker.link(feature.properties['wiadpr'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['tipadm'] !== null ? autolinker.link(feature.properties['tipadm'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['kdpkab'] !== null ? autolinker.link(feature.properties['kdpkab'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['luaswil'] !== null ? autolinker.link(feature.properties['luaswil'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['diare'] !== null ? autolinker.link(feature.properties['diare'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+              </table>';
+            layer.bindPopup(popupContent, { maxHeight: 400 });
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+          }
+
+          function style_JUMLAHKASUSDIARE_2_0(feature) {
+            switch (String(feature.properties['diare'])) {
+              case '203':
+                return {
+                  pane: 'pane_JUMLAHKASUSDIARE_2',
+                  opacity: 1,
+                  color: 'rgba(35,35,35,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(215,49,137,1.0)',
+                  interactive: true,
+                }
+                break;
+              case '210':
+                return {
+                  pane: 'pane_JUMLAHKASUSDIARE_2',
+                  opacity: 1,
+                  color: 'rgba(35,35,35,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(105,198,205,1.0)',
+                  interactive: true,
+                }
+                break;
+              case '285':
+                return {
+                  pane: 'pane_JUMLAHKASUSDIARE_2',
+                  opacity: 1,
+                  color: 'rgba(35,35,35,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(185,102,230,1.0)',
+                  interactive: true,
+                }
+                break;
+              case '287':
+                return {
+                  pane: 'pane_JUMLAHKASUSDIARE_2',
+                  opacity: 1,
+                  color: 'rgba(35,35,35,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(68,154,225,1.0)',
+                  interactive: true,
+                }
+                break;
+              case '297':
+                return {
+                  pane: 'pane_JUMLAHKASUSDIARE_2',
+                  opacity: 1,
+                  color: 'rgba(35,35,35,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(110,225,92,1.0)',
+                  interactive: true,
+                }
+                break;
+              case '353':
+                return {
+                  pane: 'pane_JUMLAHKASUSDIARE_2',
+                  opacity: 1,
+                  color: 'rgba(35,35,35,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(224,105,62,1.0)',
+                  interactive: true,
+                }
+                break;
+              case '414':
+                return {
+                  pane: 'pane_JUMLAHKASUSDIARE_2',
+                  opacity: 1,
+                  color: 'rgba(35,35,35,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(161,217,96,1.0)',
+                  interactive: true,
+                }
+                break;
+              case '452':
+                return {
+                  pane: 'pane_JUMLAHKASUSDIARE_2',
+                  opacity: 1,
+                  color: 'rgba(35,35,35,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(250,125,162,1.0)',
+                  interactive: true,
+                }
+                break;
+              case '468':
+                return {
+                  pane: 'pane_JUMLAHKASUSDIARE_2',
+                  opacity: 1,
+                  color: 'rgba(35,35,35,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(240,68,229,1.0)',
+                  interactive: true,
+                }
+                break;
+              case '518':
+                return {
+                  pane: 'pane_JUMLAHKASUSDIARE_2',
+                  opacity: 1,
+                  color: 'rgba(35,35,35,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(203,212,77,1.0)',
+                  interactive: true,
+                }
+                break;
+              case '554':
+                return {
+                  pane: 'pane_JUMLAHKASUSDIARE_2',
+                  opacity: 1,
+                  color: 'rgba(35,35,35,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(104,66,218,1.0)',
+                  interactive: true,
+                }
+                break;
+              case '574':
+                return {
+                  pane: 'pane_JUMLAHKASUSDIARE_2',
+                  opacity: 1,
+                  color: 'rgba(35,35,35,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(240,43,70,1.0)',
+                  interactive: true,
+                }
+                break;
+              case '590':
+                return {
+                  pane: 'pane_JUMLAHKASUSDIARE_2',
+                  opacity: 1,
+                  color: 'rgba(35,35,35,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(218,153,23,1.0)',
+                  interactive: true,
+                }
+                break;
+              case '703':
+                return {
+                  pane: 'pane_JUMLAHKASUSDIARE_2',
+                  opacity: 1,
+                  color: 'rgba(35,35,35,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 1.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(72,217,111,1.0)',
+                  interactive: true,
+                }
+                break;
+            }
+          }
+          map.createPane('pane_JUMLAHKASUSDIARE_2');
+          map.getPane('pane_JUMLAHKASUSDIARE_2').style.zIndex = 402;
+          map.getPane('pane_JUMLAHKASUSDIARE_2').style['mix-blend-mode'] = 'normal';
+          var layer_JUMLAHKASUSDIARE_2 = new L.geoJson(json_JUMLAHKASUSDIARE_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_JUMLAHKASUSDIARE_2',
+            layerName: 'layer_JUMLAHKASUSDIARE_2',
+            pane: 'pane_JUMLAHKASUSDIARE_2',
+            onEachFeature: pop_JUMLAHKASUSDIARE_2,
+            style: style_JUMLAHKASUSDIARE_2_0,
+          });
+          bounds_group.addLayer(layer_JUMLAHKASUSDIARE_2);
+          map.addLayer(layer_JUMLAHKASUSDIARE_2);
+          function pop_SUNGAI_3(feature, layer) {
+            var popupContent = '<table>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['NAMOBJ'] !== null ? autolinker.link(feature.properties['NAMOBJ'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['TIPSNG'] !== null ? autolinker.link(feature.properties['TIPSNG'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['KLSSNG'] !== null ? autolinker.link(feature.properties['KLSSNG'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['FCODE'] !== null ? autolinker.link(feature.properties['FCODE'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['REMARK'] !== null ? autolinker.link(feature.properties['REMARK'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['SRS_ID'] !== null ? autolinker.link(feature.properties['SRS_ID'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['LCODE'] !== null ? autolinker.link(feature.properties['LCODE'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['METADATA'] !== null ? autolinker.link(feature.properties['METADATA'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['NAMWS'] !== null ? autolinker.link(feature.properties['NAMWS'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['NAMDAS'] !== null ? autolinker.link(feature.properties['NAMDAS'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['STATUS'] !== null ? autolinker.link(feature.properties['STATUS'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['WMAX'] !== null ? autolinker.link(feature.properties['WMAX'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['DBTMAX'] !== null ? autolinker.link(feature.properties['DBTMAX'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['SLPRT'] !== null ? autolinker.link(feature.properties['SLPRT'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['SHAPE_Leng'] !== null ? autolinker.link(feature.properties['SHAPE_Leng'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+              </table>';
+            layer.bindPopup(popupContent, { maxHeight: 400 });
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+          }
+
+          function style_SUNGAI_3_0() {
+            return {
+              pane: 'pane_SUNGAI_3',
+              opacity: 1,
+              color: 'rgba(0,57,226,1.0)',
+              dashArray: '',
+              lineCap: 'square',
+              lineJoin: 'bevel',
+              weight: 3.0,
+              fillOpacity: 0,
+              interactive: true,
+            }
+          }
+          map.createPane('pane_SUNGAI_3');
+          map.getPane('pane_SUNGAI_3').style.zIndex = 403;
+          map.getPane('pane_SUNGAI_3').style['mix-blend-mode'] = 'normal';
+          var layer_SUNGAI_3 = new L.geoJson(json_SUNGAI_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_SUNGAI_3',
+            layerName: 'layer_SUNGAI_3',
+            pane: 'pane_SUNGAI_3',
+            onEachFeature: pop_SUNGAI_3,
+            style: style_SUNGAI_3_0,
+          });
+          bounds_group.addLayer(layer_SUNGAI_3);
+          map.addLayer(layer_SUNGAI_3);
+          function pop_JALAN_4(feature, layer) {
+            var popupContent = '<table>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['NAMRJL'] !== null ? autolinker.link(feature.properties['NAMRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['KONRJL'] !== null ? autolinker.link(feature.properties['KONRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['MATRJL'] !== null ? autolinker.link(feature.properties['MATRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['FGSRJL'] !== null ? autolinker.link(feature.properties['FGSRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['UTKRJL'] !== null ? autolinker.link(feature.properties['UTKRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['TOLRJL'] !== null ? autolinker.link(feature.properties['TOLRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['WLYRJL'] !== null ? autolinker.link(feature.properties['WLYRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['AUTRJL'] !== null ? autolinker.link(feature.properties['AUTRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['KLSRJL'] !== null ? autolinker.link(feature.properties['KLSRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['SPCRJL'] !== null ? autolinker.link(feature.properties['SPCRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['JPARJL'] !== null ? autolinker.link(feature.properties['JPARJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['ARHRJL'] !== null ? autolinker.link(feature.properties['ARHRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['STARJL'] !== null ? autolinker.link(feature.properties['STARJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['KLLRJL'] !== null ? autolinker.link(feature.properties['KLLRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['MEDRJL'] !== null ? autolinker.link(feature.properties['MEDRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['LOCRJL'] !== null ? autolinker.link(feature.properties['LOCRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['JARRJL'] !== null ? autolinker.link(feature.properties['JARRJL'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['FCODE'] !== null ? autolinker.link(feature.properties['FCODE'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['REMARK'] !== null ? autolinker.link(feature.properties['REMARK'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['SRS_ID'] !== null ? autolinker.link(feature.properties['SRS_ID'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['LCODE'] !== null ? autolinker.link(feature.properties['LCODE'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['METADATA'] !== null ? autolinker.link(feature.properties['METADATA'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['SHAPE_Leng'] !== null ? autolinker.link(feature.properties['SHAPE_Leng'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+              </table>';
+            layer.bindPopup(popupContent, { maxHeight: 400 });
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+          }
+
+          function style_JALAN_4_0() {
+            return {
+              pane: 'pane_JALAN_4',
+              opacity: 1,
+              color: 'rgba(0,0,0,1.0)',
+              dashArray: '',
+              lineCap: 'square',
+              lineJoin: 'bevel',
+              weight: 1.0,
+              fillOpacity: 0,
+              interactive: true,
+            }
+          }
+          map.createPane('pane_JALAN_4');
+          map.getPane('pane_JALAN_4').style.zIndex = 404;
+          map.getPane('pane_JALAN_4').style['mix-blend-mode'] = 'normal';
+          var layer_JALAN_4 = new L.geoJson(json_JALAN_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_JALAN_4',
+            layerName: 'layer_JALAN_4',
+            pane: 'pane_JALAN_4',
+            onEachFeature: pop_JALAN_4,
+            style: style_JALAN_4_0,
+          });
+          bounds_group.addLayer(layer_JALAN_4);
+          map.addLayer(layer_JALAN_4);
+          function pop_PERSAWAHAN_5(feature, layer) {
+            var popupContent = '<table>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['NAMOBJ'] !== null ? autolinker.link(feature.properties['NAMOBJ'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['JNSSWH'] !== null ? autolinker.link(feature.properties['JNSSWH'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['FCODE'] !== null ? autolinker.link(feature.properties['FCODE'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['AQDATE'] !== null ? autolinker.link(feature.properties['AQDATE'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['PUDATE'] !== null ? autolinker.link(feature.properties['PUDATE'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['REMARK'] !== null ? autolinker.link(feature.properties['REMARK'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['KODLCO'] !== null ? autolinker.link(feature.properties['KODLCO'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['SRS_ID'] !== null ? autolinker.link(feature.properties['SRS_ID'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['LCODE'] !== null ? autolinker.link(feature.properties['LCODE'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['METADATA'] !== null ? autolinker.link(feature.properties['METADATA'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['TNMSWH'] !== null ? autolinker.link(feature.properties['TNMSWH'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['SHAPE_Leng'] !== null ? autolinker.link(feature.properties['SHAPE_Leng'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['SHAPE_Area'] !== null ? autolinker.link(feature.properties['SHAPE_Area'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+              </table>';
+            layer.bindPopup(popupContent, { maxHeight: 400 });
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+          }
+
+          function style_PERSAWAHAN_5_0() {
+            return {
+              pane: 'pane_PERSAWAHAN_5',
+              opacity: 1,
+              color: 'rgba(35,35,35,1.0)',
+              dashArray: '',
+              lineCap: 'butt',
+              lineJoin: 'miter',
+              weight: 1.0,
+              fill: true,
+              fillOpacity: 1,
+              fillColor: 'rgba(55,214,113,1.0)',
+              interactive: true,
+            }
+          }
+          map.createPane('pane_PERSAWAHAN_5');
+          map.getPane('pane_PERSAWAHAN_5').style.zIndex = 405;
+          map.getPane('pane_PERSAWAHAN_5').style['mix-blend-mode'] = 'normal';
+          var layer_PERSAWAHAN_5 = new L.geoJson(json_PERSAWAHAN_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PERSAWAHAN_5',
+            layerName: 'layer_PERSAWAHAN_5',
+            pane: 'pane_PERSAWAHAN_5',
+            onEachFeature: pop_PERSAWAHAN_5,
+            style: style_PERSAWAHAN_5_0,
+          });
+          bounds_group.addLayer(layer_PERSAWAHAN_5);
+          map.addLayer(layer_PERSAWAHAN_5);
+          function pop_PEMERINTAHAN_6(feature, layer) {
+            var popupContent = '<table>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['NAMOBJ'] !== null ? autolinker.link(feature.properties['NAMOBJ'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['FGSGOV'] !== null ? autolinker.link(feature.properties['FGSGOV'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['LUAS'] !== null ? autolinker.link(feature.properties['LUAS'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['FCODE'] !== null ? autolinker.link(feature.properties['FCODE'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['REMARK'] !== null ? autolinker.link(feature.properties['REMARK'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['SRS_ID'] !== null ? autolinker.link(feature.properties['SRS_ID'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['LCODE'] !== null ? autolinker.link(feature.properties['LCODE'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+                  <tr>\
+                      <td colspan="2">' + (feature.properties['METADATA'] !== null ? autolinker.link(feature.properties['METADATA'].toLocaleString()) : '') + '</td>\
+                  </tr>\
+              </table>';
+            layer.bindPopup(popupContent, { maxHeight: 400 });
+            var popup = layer.getPopup();
+            var content = popup.getContent();
+            var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
+            popup.setContent(updatedContent);
+          }
+
+          function style_PEMERINTAHAN_6_0(feature) {
+            switch (String(feature.properties['REMARK'])) {
+              case 'Kantor Camat':
+                return {
+                  pane: 'pane_PEMERINTAHAN_6',
+                  radius: 6.0,
+                  opacity: 1,
+                  color: 'rgba(245,245,245,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 2.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(0,57,226,1.0)',
+                  interactive: true,
+                }
+                break;
+              case 'Kantor Gubernur':
+                return {
+                  pane: 'pane_PEMERINTAHAN_6',
+                  radius: 6.0,
+                  opacity: 1,
+                  color: 'rgba(249,249,249,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 2.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(119,13,151,1.0)',
+                  interactive: true,
+                }
+                break;
+              case 'Kantor Lurah':
+                return {
+                  pane: 'pane_PEMERINTAHAN_6',
+                  radius: 6.0,
+                  opacity: 1,
+                  color: 'rgba(244,255,254,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 2.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(255,0,217,1.0)',
+                  interactive: true,
+                }
+                break;
+              case 'Kantor Polisi':
+                return {
+                  pane: 'pane_PEMERINTAHAN_6',
+                  radius: 6.0,
+                  opacity: 1,
+                  color: 'rgba(255,255,255,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 2.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(51,160,44,1.0)',
+                  interactive: true,
+                }
+                break;
+              case 'Kantor Wali Kota':
+                return {
+                  pane: 'pane_PEMERINTAHAN_6',
+                  radius: 6.0,
+                  opacity: 1,
+                  color: 'rgba(245,245,245,1.0)',
+                  dashArray: '',
+                  lineCap: 'butt',
+                  lineJoin: 'miter',
+                  weight: 2.0,
+                  fill: true,
+                  fillOpacity: 1,
+                  fillColor: 'rgba(227,26,28,1.0)',
+                  interactive: true,
+                }
+                break;
+            }
+          }
+          map.createPane('pane_PEMERINTAHAN_6');
+          map.getPane('pane_PEMERINTAHAN_6').style.zIndex = 406;
+          map.getPane('pane_PEMERINTAHAN_6').style['mix-blend-mode'] = 'normal';
+          var layer_PEMERINTAHAN_6 = new L.geoJson(json_PEMERINTAHAN_6, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_PEMERINTAHAN_6',
+            layerName: 'layer_PEMERINTAHAN_6',
+            pane: 'pane_PEMERINTAHAN_6',
+            onEachFeature: pop_PEMERINTAHAN_6,
+            pointToLayer: function (feature, latlng) {
+              var context = {
+                feature: feature,
+                variables: {}
+              };
+              return L.circleMarker(latlng, style_PEMERINTAHAN_6_0(feature));
+            },
+          });
+          bounds_group.addLayer(layer_PEMERINTAHAN_6);
+          map.addLayer(layer_PEMERINTAHAN_6);
+          var baseMaps = {};
+          L.control.layers(baseMaps, { 'PEMERINTAHAN<br /><table><tr><td style="text-align: center;"><img src="legend/PEMERINTAHAN_6_KantorCamat0.png" /></td><td>Kantor Camat</td></tr><tr><td style="text-align: center;"><img src="legend/PEMERINTAHAN_6_KantorGubernur1.png" /></td><td>Kantor Gubernur</td></tr><tr><td style="text-align: center;"><img src="legend/PEMERINTAHAN_6_KantorLurah2.png" /></td><td>Kantor Lurah</td></tr><tr><td style="text-align: center;"><img src="legend/PEMERINTAHAN_6_KantorPolisi3.png" /></td><td>Kantor Polisi</td></tr><tr><td style="text-align: center;"><img src="legend/PEMERINTAHAN_6_KantorWaliKota4.png" /></td><td>Kantor Wali Kota</td></tr></table>': layer_PEMERINTAHAN_6, '<img src="legend/PERSAWAHAN_5.png" /> PERSAWAHAN': layer_PERSAWAHAN_5, '<img src="legend/JALAN_4.png" /> JALAN': layer_JALAN_4, '<img src="legend/SUNGAI_3.png" /> SUNGAI': layer_SUNGAI_3, 'JUMLAH KASUS DIARE <br /><table><tr><td style="text-align: center;"><img src="legend/JUMLAHKASUSDIARE_2_2030.png" /></td><td>203</td></tr><tr><td style="text-align: center;"><img src="legend/JUMLAHKASUSDIARE_2_2101.png" /></td><td>210</td></tr><tr><td style="text-align: center;"><img src="legend/JUMLAHKASUSDIARE_2_2852.png" /></td><td>285</td></tr><tr><td style="text-align: center;"><img src="legend/JUMLAHKASUSDIARE_2_2873.png" /></td><td>287</td></tr><tr><td style="text-align: center;"><img src="legend/JUMLAHKASUSDIARE_2_2974.png" /></td><td>297</td></tr><tr><td style="text-align: center;"><img src="legend/JUMLAHKASUSDIARE_2_3535.png" /></td><td>353</td></tr><tr><td style="text-align: center;"><img src="legend/JUMLAHKASUSDIARE_2_4146.png" /></td><td>414</td></tr><tr><td style="text-align: center;"><img src="legend/JUMLAHKASUSDIARE_2_4527.png" /></td><td>452</td></tr><tr><td style="text-align: center;"><img src="legend/JUMLAHKASUSDIARE_2_4688.png" /></td><td>468</td></tr><tr><td style="text-align: center;"><img src="legend/JUMLAHKASUSDIARE_2_5189.png" /></td><td>518</td></tr><tr><td style="text-align: center;"><img src="legend/JUMLAHKASUSDIARE_2_55410.png" /></td><td>554</td></tr><tr><td style="text-align: center;"><img src="legend/JUMLAHKASUSDIARE_2_57411.png" /></td><td>574</td></tr><tr><td style="text-align: center;"><img src="legend/JUMLAHKASUSDIARE_2_59012.png" /></td><td>590</td></tr><tr><td style="text-align: center;"><img src="legend/JUMLAHKASUSDIARE_2_70313.png" /></td><td>703</td></tr></table>': layer_JUMLAHKASUSDIARE_2, '<img src="legend/ADMINISTRASIDESA_1.png" /> ADMINISTRASIDESA': layer_ADMINISTRASIDESA_1, "OSM Standard": layer_OSMStandard_0, }, { collapsed: false }).addTo(map);
+          setBounds();
+          var i = 0;
+          layer_ADMINISTRASIDESA_1.eachLayer(function (layer) {
+            var context = {
+              feature: layer.feature,
+              variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['NAMOBJ'] !== null ? String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['NAMOBJ']) + '</div>' : ''), { permanent: true, offset: [-0, -16], className: 'css_ADMINISTRASIDESA_1' });
+            labels.push(layer);
+            totalMarkers += 1;
+            layer.added = true;
+            addLabel(layer, i);
+            i++;
+          });
+          var i = 0;
+          layer_PEMERINTAHAN_6.eachLayer(function (layer) {
+            var context = {
+              feature: layer.feature,
+              variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['NAMOBJ'] !== null ? String('<div style="color: #323232; font-size: 10pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['NAMOBJ']) + '</div>' : ''), { permanent: true, offset: [-0, -16], className: 'css_PEMERINTAHAN_6' });
+            labels.push(layer);
+            totalMarkers += 1;
+            layer.added = true;
+            addLabel(layer, i);
+            i++;
+          });
+          resetLabels([layer_ADMINISTRASIDESA_1, layer_PERSAWAHAN_5, layer_PEMERINTAHAN_6]);
+          map.on("zoomend", function () {
+            resetLabels([layer_ADMINISTRASIDESA_1, layer_PERSAWAHAN_5, layer_PEMERINTAHAN_6]);
+          });
+          map.on("layeradd", function () {
+            resetLabels([layer_ADMINISTRASIDESA_1, layer_PERSAWAHAN_5, layer_PEMERINTAHAN_6]);
+          });
+          map.on("layerremove", function () {
+            resetLabels([layer_ADMINISTRASIDESA_1, layer_PERSAWAHAN_5, layer_PEMERINTAHAN_6]);
+          });
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- End Map Section -->
+  <!-- End Footer Section -->
+  <footer class="d-flex flex-column pt-5">
+    <div class="container">
+      <div class="footer-content row d-flex justify-content-between">
+        <div class="box col-5 col-md-auto d-flex flex-column">
+          <h1 class="fs-5">Layanan Kesehatan</h1>
+          <a href="https://www.kemkes.go.id/id/layanan/gerakan-masyarakat-hidup-sehat"
+            class="link-dark text-decoration-none"> Gerakan Masyarakat Hidup Sehat </a>
+          <a href="https://www.kemkes.go.id/id/layanan/transformasi-kesehatan-indonesia"
+            class="link-dark text-decoration-none">Transformasi Kesehatan Indonesia</a>
+          <a href="https://www.kemkes.go.id/id/dashboard-krisis-kesehatan" class="link-dark text-decoration-none">
+            Pantauan Kejadian Krisi Kesehatan</a>
+          <a href="https://kemkes.go.id/id/layanan/pencegahan-dan-pengendalian-penyakit"
+            class="link-dark text-decoration-none"> Pencegahan dan Pengendalian</a>
+          <a href="https://www.kemkes.go.id/id/layanan/informasi-kebijakan-kesehatan"
+            class="link-dark text-decoration-none">Informasi Kebijakan Kesehatan </a>
+        </div>
+        <div class="box col-5 col-md-auto d-flex flex-column">
+          <h1 class="fs-5">More Information</h1>
+          <a href="https://www.kemkes.go.id/id/home" class="link-dark text-decoration-none"> My Account </a>
+          <a href="https://www.kemkes.go.id/id/profil-pejabat-new/all" class="link-dark text-decoration-none">Profil
+            Pejabat </a>
+          <a href="https://www.kemkes.go.id/id/unit-layanan-terpadu" class="link-dark text-decoration-none"> Layanan</a>
+          <a href="https://www.kemkes.go.id/id/media/all" class="link-dark text-decoration-none"> Media</a>
+          <a href="https://www.kemkes.go.id/id/layanan/fasilitas-kesehatan"
+            class="link-dark text-decoration-none">Fasilitas</a>
+        </div>
+        <div class="box col-5 col-md-auto d-flex flex-column">
+          <h1 class="fs-5">Locations</h1>
+          <a href="https://www.kemkes.go.id/id/home" class="link-dark text-decoration-none"> Jakarta</a>
+          <a href="https://www.kemkes.go.id/id/home" class="link-dark text-decoration-none"> Surabaya </a>
+          <a href="https://www.kemkes.go.id/id/home" class="link-dark text-decoration-none"> Semarang</a>
+          <a href="https://www.kemkes.go.id/id/home" class="link-dark text-decoration-none"> Bandung</a>
+          <a href="https://www.kemkes.go.id/id/home" class="link-dark text-decoration-none"> Yogyakarta</a>
+        </div>
+        <div class="box col-5 col-md-auto d-flex flex-column">
+          <h1 class="fs-5">Contact</h1>
+          <a href="https://www.kemkes.go.id/id/layanan/halo-kemenkes"
+            class="link-dark text-decoration-none">(021)-5292-1480</a>
+          <a href="https://www.kemkes.go.id/id/layanan/kontak-kami" class="link-dark text-decoration-none">Email :
+            kontak@kemkes.go.id</a>
+          <a href="https://www.instagram.com/kemenkes_ri/" class="link-dark text-decoration-none">Instragram
+            @kemenkes_ri</a>
+          <a href="https://www.facebook.com/KementerianKesehatanRI/" class="link-dark text-decoration-none">Facebook
+            @Kementrian Kesehatan RI</a>
+          <a href="#home" class="link-dark text-decoration-none">Yogyakarta, Indonesia</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Created By <span>Hanantarini Sanastri</span></p>
+        <p>Health is the main Thing 2024</p>
+      </div>
+    </div>
+  </footer>
+  <!-- End footer section -->
+  <!-- Script bootsrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <!-- Script Font Awesome Icon -->
+  <script src="https://kit.fontawesome.com/e091bc9c2b.js" crossorigin="anonymous"></script>
+  <!-- Script nav active menu -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var navItems = document.querySelectorAll('.nav-item');
+      navItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+          navItems.forEach(function (navItem) {
+            navItem.classList.remove('active');
+          });
+          this.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
