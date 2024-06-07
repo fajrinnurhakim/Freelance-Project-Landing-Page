@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Hitung Harga - Kementerian Pertahanan Republik Indonesia</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a href="./index.html" class="text-decoration-none text-body fw-bold">
+                    <img src="./img/kemenhan.png" alt="logo" style="width: 24px; height: 24px;">
+                    Kementrian Pertahanan Indonesia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./index.html">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pendaftaran.html">Pendaftaran</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="hitung_harga.html">Hitung Harga Seragam dan Peralatan Kementerian
+                                Pertahanan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="daftar_pegawai.html">Daftar Pegawai</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="daftar_inventaris.html">Daftar Inventaris Barang</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-4">Hitung Harga Seragam dan Peralatan Kementerian Pertahanan</h1>
+        </div>
+        <div class="card p-3 mb-3">
+            <form id="formHitungHarga">
+                <div class="form-group">
+                    <label for="jumlah_seragam">Jumlah Seragam:</label>
+                    <input type="number" class="form-control" id="jumlah_seragam" name="jumlah_seragam" min="0"
+                        value="0">
+                    <label for="jumlah_seragam">(Rp 200.000 per unit)</label>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label>Peralatan:</label><br>
+                    <div class="form-row">
+                        <div class="col-md-4">
+                            <label for="helm">Helm</label>
+                            <input type="number" class="form-control" id="jumlah_helm" name="peralatan" min="0"
+                                value="0">
+                        </div>
+                        <div class="col-md-8">
+                            <label for="helm">(Rp 250.000 per unit)</label><br>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-4">
+                            <label for="rompi">Rompi</label>
+                            <input type="number" class="form-control" id="jumlah_rompi" name="peralatan" min="0"
+                                value="0">
+                        </div>
+                        <div class="col-md-8">
+                            <label for="rompi">(Rp 100.000 per unit)</label><br>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-4">
+                            <label for="sepatu">Sepatu</label>
+                            <input type="number" class="form-control" id="jumlah_sepatu" name="peralatan" min="0"
+                                value="0">
+                        </div>
+                        <div class="col-md-8">
+                            <label for="sepatu">(Rp 300.000 per unit)</label><br>
+                        </div>
+                    </div>
+                    <!-- Tambahkan opsi peralatan lainnya di sini -->
+                </div>
+
+                <button type="button" class="btn btn-primary" onclick="hitungTotalHarga()">Hitung Total Harga</button>
+            </form>
+            <hr>
+            <div id="total_harga" class="text-danger"></div>
+        </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script>
+        function hitungTotalHarga() {
+            // Mendapatkan nilai dari input jumlah barang
+            var jumlahSeragam = parseInt(document.getElementById("jumlah_seragam").value);
+            var jumlahHelm = parseInt(document.getElementById("jumlah_helm").value);
+            var jumlahRompi = parseInt(document.getElementById("jumlah_rompi").value);
+            var jumlahSepatu = parseInt(document.getElementById("jumlah_sepatu").value);
+
+            // Mendapatkan harga per barang dari database atau sumber lainnya
+            var hargaSeragamPerUnit = 200000; // Contoh harga per unit seragam
+            var hargaHelmPerUnit = 250000; // Harga helm per unit
+            var hargaRompiPerUnit = 100000; // Harga rompi per unit
+            var hargaSepatuPerUnit = 300000; // Harga sepatu per unit
+
+            // Menghitung total harga
+            var totalHargaSeragam = jumlahSeragam * hargaSeragamPerUnit;
+            var totalHargaHelm = jumlahHelm * hargaHelmPerUnit;
+            var totalHargaRompi = jumlahRompi * hargaRompiPerUnit;
+            var totalHargaSepatu = jumlahSepatu * hargaSepatuPerUnit;
+            var totalHarga = totalHargaSeragam + totalHargaHelm + totalHargaRompi + totalHargaSepatu;
+
+            // Menampilkan total harga pada elemen dengan id "total_harga"
+            document.getElementById("total_harga").innerText = "Total Harga: Rp " + totalHarga.toLocaleString();
+        }
+    </script>
+</body>
+
+</html>

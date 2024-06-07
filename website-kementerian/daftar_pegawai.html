@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Daftar Pegawai - Kementerian Pertahanan Republik Indonesia</title>
+    <style>
+        .pegawai {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .pegawai img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 576px) {
+            .pegawai {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .pegawai img {
+                margin: auto;
+                margin-bottom: 20px;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a href="./index.html" class="text-decoration-none text-body fw-bold">
+                    <img src="./img/kemenhan.png" alt="logo" style="width: 24px; height: 24px;">
+                    Kementrian Pertahanan Indonesia
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./index.html">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pendaftaran.html">Pendaftaran</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="hitung_harga.html">Hitung Harga Seragam dan Peralatan Kementerian
+                                Pertahanan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="daftar_pegawai.html">Daftar Pegawai</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="daftar_inventaris.html">Daftar Inventaris Barang</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-5 mb-5">
+        <div class="text-center">
+            <h1 class="display-4">Daftar Pegawai Kementerian Pertahanan</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pegawai">
+                    <img src="img/image5.jpeg" alt="Pegawai 1">
+                    <p>Letjen TNI Dr. Budi Prijono, S.T., M.M., C.Fr.A. - Inspektorat Jenderal Kementerian Pertahanan
+                    </p><br>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="pegawai">
+                    <img src="img/image6.jpeg" alt="Pegawai 2">
+                    <p>Marsda TNI Donny Ermawan Taufanto, M.D.S. - Sekretariat Jenderal Kementerian Pertahanan</p><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pegawai">
+                    <img src="img/image7.jpeg" alt="Pegawai 3">
+                    <p>Marsdya TNI Yusuf Jauhari, M.Eng. - Badan Sarana Pertahanan</p><br>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="pegawai">
+                    <img src="img/image8.jpg" alt="Pegawai 4">
+                    <p>Letjen TNI Hartono, S.IP., M.Si. - Badan Intelijen Negara</p><br>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pegawai">
+                    <img src="img/image9.jpg" alt="Pegawai 5">
+                    <p>Letjen TNI Jonni Mahroza, Ph.D. - Guru Besar Universitas Pertahanan Republik Indonesia</p><br>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="pegawai">
+                    <img src="img/image10.jpg" alt="Pegawai 6">
+                    <p>Dr. Daniel Lumadyo Wartoadi, Sp. Rad - Kepala Pusat Rehabilitasi Kementerian Pertahanan
+                        (Kapusrehab
+                        Kemhan)</p><br>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
